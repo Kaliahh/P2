@@ -5,30 +5,49 @@
 \graphicspath{{figures/}}
 
 \begin{document}
-% frontmatter
+% frontmatter: Magi
 \pagestyle{empty} % disable headers and footers
 \pagenumbering{roman} % use roman page numbering in the frontmatter
-\input{sections/forside.tex}
-\input{sections/colophon.tex}
-\input{sections/titlepages.tex}
+\input{sections/misc/forside.tex}
+\input{sections/misc/colophon.tex}
+\input{sections/misc/titlepages.tex}
 \cleardoublepage
 \pdfbookmark[0]{Contents}{label:contents}
 \pagestyle{fancy} %enable headers and footers again
 \tableofcontents
-\input{sections/forord.tex}
+\input{sections/misc/forord.tex}
 \cleardoublepage
 % mainmatter
 \pagenumbering{arabic} % use arabic page numbering in the mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Indledning
 \input{sections/indledning.tex}
-%\input{sections/metode.tex}
-\input{sections/problemanalyse.tex}
+
+% Problemanalyse
+\input{sections/eksisterende/introduktion.tex}
+\input{sections/eksisterende/permanente.tex}
+\input{sections/eksisterende/midlertidige.tex}
+
+\input{sections/alternativer/introduktion.tex}
+\input{sections/alternativer/undervisning.tex}
+\input{sections/alternativer/droner.tex}
+
+% Problemformulering
 \input{sections/problemformulering.tex}
-% programmering/implementation
-\input{sections/problemloesning.tex}
-%\input{sections/vurdering.tex}
+
+% Problemløsning
+
+
+% Vurdering og konklusion
 %\input{sections/conclusion.tex}
-%\input{sections/perspektivering.tex}
-% perspektivering
+\input{sections/vurdering.tex}
+
+% Perspektivering
+\input{sections/perspektivering.tex}
+
+
+
 \bibliography{bib/mybib}
 %\printbibliography[heading=bibintoc]
 \label{bib:mybiblio}

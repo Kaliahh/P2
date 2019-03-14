@@ -1,0 +1,30 @@
+% Forklaring af regel-baserede systemer
+Et regel-baseret system behandler information baseret på et antal regler, som på forhånd er defineret af mennesker. Det er en type af kunstig intelligens, som kan være i stand til at efterligne ekspertviden. Denne viden er repræsenteret af systemets regler, samt en række fakta om det relevante systems begyndelsestilstand. Disse regler er ofte af formen "Hvis a, så b", hvilket betyder at en resulterende konklusion eller handling (b) kun vil finde sted, hvis betingelsen (a) er opfyldt \cite{Grosan2011}. Disse systemer kræver derfor, at der er opstillet klart definerede regler til at dække alle handlinger, der kan foretages inden for systemets arbejdsområde.
+\par
+Regel-baserede systemer kan anvendes inden for flere områder, såsom klassifikation og forudsigelser af konsekvenserne af ændringer i et system. Et eksempel på klassifikation kunne være diagnose af sygdom baseret på symptomer. 
+\par
+% Eksempel med boids på regel-baseret model. 
+Der findes også regel-baserede modeller, som er modeller defineret indirekte ud fra et sæt regler. Et eksempel på en sådan regel-baseret model, er boid-modellen \cite{reynolds1987}. Denne bruges til at modellere de enkelte elementer i en simuleret flok eller sværm. Modellen er baseret på tre regler: kollisionsundgåelse, hastighedsmatching og flokcentrering. Ud fra disse regler dannes en model for de enkelte medlemmer i en flok, der gør dem i stand til at danne og forblive i en flok.
+\par
+% Forklarer at der er tale om top-dowm i regelbaseret.
+Sådanne regel-baserede systemer og modeller er en såkaldt top-down [CITATION] fremgangsmåde til simulation. Dette betyder at de regler systemerne bygger på, er eksplicit definerede på baggrund af undersøgelser af det emne, der ønskes modelleret.
+\par
+% Lille eksempel med modellering af fisks bevægelser
+Et eksempel på dette er \cite{RAILSBACK199973}, hvor der defineres en række regler om, hvordan fisk bevæger sig. Dette gøres baseret på en gennemgang af litteratur, som undersøger og modellerer netop dette. Resultaterne sammenlignes herefter med observationer af, hvordan sådanne fisk egentlig bevæger sig, og der gøres forsøg på at lave regler, som stemmer mere overens med den observerede adfærd.
+\par
+Top-down fremgangsmåden fremstår i, at de enkelte aspekter der har indflydelse på subjektets beslutninger og den overordnede adfærd modelleres, baseret på analyse af den generelle adfærd. 
+\par
+% Forklarer hvorfor vi ikke vil have top-down
+Dette er ikke en hensigtsmæssig tilgang i situationer, hvor det ønskes at lave en model, men de nødvendige regler for systemet, ikke er kendt på forhånd. I sådanne tilfælde er det derfor nødvendigt at udarbejde regler for samtlige aspekter af subjektets adfærd. Ydermere er der behov for at verificere, at disse regler afspejler adfærden korrekt. Dette kan være problematisk, da der først skal indsamles data fra virkeligheden, for at kunne sammenligne med data fra modellen [CITATION].
+
+\section*{Metoder til modellering af bevægelser}
+For at kunne simulere en sværm, skal der først laves en model, der beskriver dennes bevægelsesmønstre. I dette afsnit undersøges det, hvilke modelleringsmetoder der findes til at oversætte bevægelser fra naturen til software. Herefter udvælges en tilgang på baggrund af dens relevans for oversættelse af sværmedynamik til computersimulation.
+
+\section*{Valg af modelleringsmetode}
+% Valg af maskinlæring og hvorfor
+I dette afsnit blev der præsenteret flere forskellige metoder til at modellere bevægelser, sådan at de kan genskabes eller simuleres af en computer. Den regel-baserede tilgang kræver, at der skal være et tilstrækkeligt antal regler for denne bevægelse. Disse regler skal defineres før nogen form for modellering eller simulering kan finde sted. Hvis en sværms bevægelser ikke på forhånd er grundigt analyseret, er det ikke muligt at tage denne tilgang. Denne fremgangsmåde er som tidligere nævnt en top-down fremgangsmåde. Modstykket til denne er en bottom-up fremgangsmåde, hvor enkelte dele eller systemer sammensættes og skaber mere komplekse systemer [CITATION].
+\par
+% Automatisk læring i stedet for maskinlæring. Vi har ikke snakket om maskinlæring til modellering
+Maskinlæring kan bruges som en bottom-up fremgangsmåde, da det tilbyder en bred række af metoder til modellering, der ikke er baseret på eksplicitte regler. Dette gør det muligt at opbygge en model for bevægelse, baseret på adfærden af de enkelte medlemmer af sværmen. Med maskinlæring er det også muligt at lave modeller uden at kende alle reglerne, så længe det ønskede resultat er kendt på forhånd. Derfor vælges denne tilgang, til at simulere sværmadfærd.
+\par
+En forklaring af maskinlæring og hvilke typer der er, følger i næste afsnit.

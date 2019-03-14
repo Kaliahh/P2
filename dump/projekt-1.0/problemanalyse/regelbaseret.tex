@@ -1,0 +1,45 @@
+\section{Problemer med en regelbaseret tilgang}
+
+% Eksemplerne og andet i dette afsnit kunne måske med fordel erstattes med referencer til afsnittet ovenfor.
+
+% Vi behandler nu mere fyldestgørende konteksten (TM) for nogle problemer, som blev taget op i indledningen
+I indledningen blev der kort berørt et problem ved brugen af regelbaseret simuleringsteknologi, som nu kan behandles fyldestgørende. Der kan nemlig identificeres en begrænsning ved eksisterende tekniske løsninger inden for denne tilgang.
+\par
+% Forklaring af regel-baserede systemer
+Først en nødvendig definition: Regelbaserede systemer, herunder simulationer, er kendetegnet ved at fungere efter et antal eksplicit definerede regler, som er fastlagte inden systemets opstart. Disse regler optræder ofte på formen "hvis A, så B", hvilket betyder at en resulterende konklusion eller handling (B) kun vil finde sted, hvis betingelsen (A) er opfyldt \cite{Grosan2011}. Komplette regelbaserede systemer kræver derfor, at der er opstillet entydige regler for samtlige operationer inden for systemets arbejdsområde. 
+\par
+% Eksempel på en regelbaseret tilgang til simulation
+Et eksempel på en regelbaseret sværmesimulation er boid-modellen \cite{reynolds1987}. Den definerer eksplicit adfærden for de enkelte agenter i den simulerede sværm. Modellen er baseret på tre regler i form af kollisionsundgåelse, hastighedsmatching og floksamling. Ud fra disse dannes en model for de enkelte agenter, som gør dem i stand til at danne en sværm.
+\par
+% Top-down tilgangen til simulering og begrænsningerne, når reglerne står i det uvisse
+Sådanne regelbaserede systemer og modeller er udtryk for en \textit{top-down} fremgangsmåde til simulation. Med dette menes det, at systemets adfærd styres af en række regler, som alle defineres eksplicit af programmøren, der her kan forstås som en slags marionetdukkefører "ovenfra"\ \cite{mhamdi2018}. Reglerne i en regelbaseret simulation skal defineres på denne måde, inden simulationen kan finde sted. Dette skyldes førnævnte træk ved denne type systemer, at deres virkefelt ikke rækker længere end deres regler \cite{Grosan2011}. I sagens natur vil der altså opstå problemer med at køre simulationen, når visse regler er ukendte og ikke umiddelbart til at fremskaffe.
+\par
+% "Sværme forstået som selvorganiserede systemer er særligt vanskelige at reverse engineere".
+Der kan argumenteres for, at dette ofte er tilfældet, når målet er at undersøge sværme i naturen, som defineret ovenfor. Selvorganiserende systemer er komplekse (ikke-lineære), hvilket medfører, at der ikke er nogen ligefrem (lineær) forbindelse mellem adfærden i de lokale interaktioner og adfærden på helhedsplan \cite{swarmsarenonlinear}. Dette kendetegn skaber en særlig udfordring, når det kommer til at foretage \textit{reverse engineering} af sværme \cite{swarmsaredifficult}.
+\par
+% Regelbaseret simulationsteknologi gør ikke opgaven meget lettere...
+Muligheder for at lette denne opgave har i sværmeforskningen været et væsentligt motiv for at undersøge metoder inden for computersimulering (Se afsnit \ref{ch:hvordansvaerme}). Der er imidlertid begrænsninger ved den regelbaserede tilgang, når det kommer til dekonstruktion af naturfænomener hvis regler ikke er kendt på forhånd. Inden for naturforskning baseret på tilgangen er fremgangsmåden ofte først at finde bud på de rette regler ved undersøgelser af fænomenet, hvorefter simulationen implementeres ved trial-and-error \cite{eriksson2010}\cite{cucker2007}. Dette kan udgøre en betydelig arbejdsbyrde uden garanti for en brugbar model. Med en regelbaseret tilgang kan simuleringen af fisk eksempelvis kræve en grundig litteraturgennemgang kombineret med egne observationer af artens adfærd, hvor der sker løbende tilretninger af modellen \cite{RAILSBACK199973}.
+\par 
+Som eksemplificeret flyttes selve opgaven om at foretage \textit{reverse engineering} i praksis uden for selve simulationssystemet, til felt-, litteraturstudier og andet. Tilgangens krav om prædefinerede regler gør her, at teknologiens understøttelse af selve dekonstrueringen er begrænset. Simulationen kan mestendels siges at fungere som testplatform for allerede udtænkte løsningsforslag. Fremgangsmåden kan i en vis forstand synes at være cirkulær: Simulationen bliver både målet med og midlet til at afdække sværmedynamik.
+\par
+% Mini-mini-konklusion
+% Som illustreret i afsnit \ref{ch:hvordansvaerme} kan det godt lade sig gøre at foretage \textit{reverse engineering} af sværme med en regelbaseret simuleringstilgang, og det er ligefrem almindelig praksis. Alligevel kan det siges at være en mulig begrænsning ved teknologien, at den i kraft af at være regelbaseret kun yder et relativt beskedent bidrag til produktionen af modeller: Findes der måske mindre benyttede alternativer, hvor dette ikke er tilfældet, og dekonstruktion derfor bliver nemmere? Spørgsmålet om der findes et nyttigt supplement til fremherskende løsninger motiverer en nærmere undersøgelse.
+
+\subsection{Alternativ til regelbaseret tilgang}
+En læringsbaseret tilgang er et alternativ til den regelbaserede tilgang. Hvor den regelbaserede tilgang har brug for eksplicitte regler for opførsel, er en læringsbaseret tilgang i stand til selv at finde frem til disse regler. For at være i stand til dette, har en læringsbaseret tilgang i stedet brug for feedback. Altså en måde, at afgøre hvor godt den har løst et givent problem. Målet er så at løse opgaven så godt så muligt, og dermed finde en optimal løsning. 
+\par
+Læringsbaserede tilgange dækker over en række underkategorier, og der er derfor mange forskellige metoder og tilgange inden for dette emne. Den feedback der tillader læring, har forskellig form, alt efter hvilken specifik metode der anvendes. Fælles for metoderne er at de har fokus på en række egenskaber inden for det givne problemområde. Læringen går ud på at finde ud af, hvilken indflydelse disse egenskaber har på en løsning og optimere dem.
+\par
+% Eksempel på brug af maskinlæring til at undersøge dyreadfærd
+Maskinlæring er en kategori af læringsbaserede tilgange, der blandt andet kan bruges i studier af dyreadfærd. \cite{VALLETTA2017} giver eksempler på at maskinlæring kan automatiserer klassificeringen af aktiviteter, ved brug GPS- og accelerometer-data fra individuelle dyr. Dette fjerner behovet for at mennesker skal bruge tid på at analysere og klassificere denne data. 
+\par
+Altså er det lovende at bruge en læringsbaseret tilgang til at modellere sværmeadfærd, da det er muligt at vurdere, hvorvidt sværmens opgave, altså grunden til at sværmen opstod, er løst. Læringsbaserede tilgange dækker som sagt over en række underkategorier, og der er derfor mange forskellige metoder og tilgange inden for dette emne. Nogle af de mest lovende tilgange beskrives mere dybdegående i kapitlet om problemløsning. 
+
+
+
+
+
+
+
+
+% Det er her vi samles HEJ (✿◠‿◠)  ┬─┬ ノ( ゜-゜ノ)

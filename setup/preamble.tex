@@ -104,8 +104,8 @@
 % Change the headers and footers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhf{} %delete everything
-\renewcommand{\headrulewidth}{0pt} %remove the horizontal line in the header
+\fancyhf{} % delete everything
+\renewcommand{\headrulewidth}{0pt} % remove the horizontal line in the header
 \fancyhead[RE]{\small\nouppercase\leftmark} %even page - chapter title
 \fancyhead[LO]{\small\nouppercase\rightmark} %uneven page - section title
 \fancyhead[LE,RO]{\thepage} %page number on all pages
@@ -126,7 +126,7 @@
 %\addbibresource{bib/mybib}
 \usepackage[numbers]{natbib} % bibliography
 %\usepackage{biblatex}
-\bibliographystyle{plainnat} % viser referencers url
+\bibliographystyle{unsrtnat} % viser referencers url
 
 \usepackage{url} % url formatering
 \usepackage{hyperref}
@@ -213,3 +213,6 @@
 
 
 \DeclareCaptionLabelFormat{continued}{Continued #1 ̃#2} \captionsetup[ContinuedFloat]{labelformat=continued}
+
+% Kan muligvis få tekst rundt om billeder
+\usepackage{wrapfig}
